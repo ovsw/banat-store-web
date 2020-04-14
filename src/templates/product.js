@@ -13,7 +13,6 @@ import ProductDetails from '../components/product-details'
 const BlogPostTemplate = (props) => {
   const {data, errors, location} = props
   const product = data && data.product
-  console.log(data.product)
   return (
     <>
       {errors && <SEO title='GraphQL Error' />}
