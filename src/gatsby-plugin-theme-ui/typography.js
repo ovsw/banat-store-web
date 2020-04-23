@@ -3,8 +3,8 @@ const typography = {
     // 'sans': '-apple-system, BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"',
     // 'serif': 'Georgia, Cambria, "Times New Roman", Times, serif',
     mono: 'Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace',
-    heading: '"Roboto", sans-serif',
-    body: 'Roboto, sans-serif'
+    heading: 'Merriweather, sans-serif',
+    body: '"Open Sans", sans-serif'
     // 'monospace': 'Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace'
   },
   text: {
@@ -13,29 +13,6 @@ const typography = {
       fontWeight: 'heading',
       lineHeight: 'heading',
       letterSpacing: 'heading'
-    },
-    superHeading: {
-      fontFamily: 'heading2',
-      fontWeight: 'normal',
-      lineHeight: 'tight',
-      textTransform: 'uppercase',
-      fontSize: [1, null, null, '1.125rem'],
-      display: 'flex',
-      justifyContent: 'flex-start',
-      alignItems: 'center',
-      my: 0,
-      '&::before': {
-        content: '" "',
-        width: ['2rem', '4.375rem'],
-        height: '2px',
-        borderTopColor: 'primary',
-        borderTopWidth: '2px',
-        borderTopStyle: 'solid',
-        flexGrow: '0',
-        flexShrink: '0',
-        marginRight: '10px',
-        marginTop: '-1px'
-      }
     },
     mainHeading: {
       fontFamily: 'heading',

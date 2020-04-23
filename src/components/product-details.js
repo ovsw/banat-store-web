@@ -20,7 +20,6 @@ const ProductDetailsPage = ({id, title, images, price, vendor, _rawBlurb, _rawBo
           <h1>{localizeText(title)}</h1>
           <p>from {vendor.title}</p>
           <PortableText blocks={localizeText(_rawBody)} />
-          <p>${price}</p>
 
           <button
             sx={{variant: 'buttons.outline'}}
@@ -35,7 +34,7 @@ const ProductDetailsPage = ({id, title, images, price, vendor, _rawBlurb, _rawBo
             {/* data-item-custom1-name={customField ? customField.name : null}
           data-item-custom1-options={this.createString(customField.values)}
           data-item-custom1-value={this.state.selected} */}
-            Add to Basket
+            Add to Order (${price})
           </button>
         </div>
       </div>
