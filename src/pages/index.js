@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import {jsx, Container} from 'theme-ui'
-import React from 'react' // eslint-disable-line
+import React, {useEffect} from 'react' // eslint-disable-line
 import {graphql, Link} from 'gatsby'
 import {mapEdgesToNodes, localizeText} from '../lib/helpers'
 import Img from 'gatsby-image'
@@ -9,6 +9,13 @@ export default (props) => {
   const {data, errors} = props
   const productsEdges = data && data.homeProducts
   const productsNodes = mapEdgesToNodes(productsEdges)
+
+  useEffect(() => {
+    typeof window !== 'undefined' && window.fetch('/.netlify/functions/hello')
+      .then(response => response.json())
+      .then(console.log)
+  })
+
   return (
     <Container className='container'>
       <ul sx={{variant: 'lists.reset', display: 'flex'}}>

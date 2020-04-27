@@ -7,6 +7,8 @@
   "scripts": {
     "build": "gatsby build",
     "dev": "gatsby develop",
+    "develop": "gatsby develop",
+    "build:lambda": "netlify-lambda build functions",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
@@ -24,6 +26,7 @@
     "gatsby-source-filesystem": "^2.2.2",
     "gatsby-transformer-sharp": "^2.4.3",
     "get-youtube-id": "^1.0.1",
+    "http-proxy-middleware": "^1.0.3",
     "is-absolute-url": "^3.0.3",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
