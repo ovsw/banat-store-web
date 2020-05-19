@@ -1,6 +1,7 @@
 const space = {
   space: [
     0,
+    '0.125rem',
     '0.25rem',
     '0.5rem',
     '1rem',
