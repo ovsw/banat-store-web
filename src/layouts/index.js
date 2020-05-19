@@ -3,11 +3,13 @@ import LayoutWrapper from '../components/layout'
 import {hot} from 'react-hot-loader/root'
 import Helmet from 'react-helmet'
 
+import '../styles/snipcart.css'
+
 const Layout = (props) => (
   <>
-    <Helmet htmlAttributes={{lang: 'en'}}>
+    {/* <Helmet htmlAttributes={{lang: 'en'}}>
       <link rel='stylesheet' href='https://cdn.snipcart.com/themes/v3.0.11/default/snipcart.css' />
-    </Helmet>
+    </Helmet> */}
 
     <LayoutWrapper>{props.children}</LayoutWrapper>
   </>
