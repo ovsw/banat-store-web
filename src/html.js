@@ -4,6 +4,9 @@ import PropTypes from 'prop-types'
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV || 'development'}`
 })
+if (!process.env.SNIPCART_API_KEY) {
+  console.log('no snipcart API key')
+}
 
 export default function HTML (props) {
   return (
