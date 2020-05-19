@@ -60,6 +60,10 @@ export default {
     },
     skewedright: {
       ...skewedRight
+    },
+    noUnderline: {
+      textDecoration: 'none',
+      color: 'inherit'
     }
   },
   styles: {

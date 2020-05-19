@@ -1,9 +1,11 @@
 /** @jsx jsx */
-import {jsx, Container} from 'theme-ui'
+import {jsx} from 'theme-ui'
 import React, {useEffect} from 'react' // eslint-disable-line
-import {graphql, Link} from 'gatsby'
+import {graphql} from 'gatsby'
 import {mapEdgesToNodes, localizeText} from '../lib/helpers'
-import Img from 'gatsby-image'
+
+// modules
+import FeaturedProducts from '../modules/featured-products'
 
 export default (props) => {
   const {data} = props
@@ -26,21 +28,7 @@ export default (props) => {
   })
 
   return (
-    <Container className='container'>
-      <ul sx={{variant: 'lists.reset', display: 'flex'}}>
-        {productsNodes.map(({id, title, slug, images, price, vendor}) => (
-          <li key={id} sx={{width: ['full', null, null, '1/2', '1/3']}}>
-            <h3>{localizeText(title)}</h3>
-            <p>{vendor.title}</p>
-            <Link to={`/${slug.current}/`}>
-              <Img fixed={images[0].asset.fixed} />
-            </Link>
-            <p>RON {price}</p>
-            <Link sx={{variant: 'buttons.simpleAccent'}} to={`/${slug.current}/`}>Details</Link>
-          </li>
-        ))}
-      </ul>
-    </Container>
+    <FeaturedProducts productsNodes={productsNodes} />
   )
 }
 
@@ -85,10 +73,17 @@ fragment SanityImage on SanityImage {
               fixed(width: 400) {
                 ...GatsbySanityImageFixed
               }
+              fluid(maxWidth: 400) {
+                ...GatsbySanityImageFluid
+              }
             }
           }
           slug {
             current
+          }
+          blurb {
+            en
+            ro
           }
           price
           vendor{
