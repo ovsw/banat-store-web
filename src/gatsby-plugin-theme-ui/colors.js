@@ -6,7 +6,7 @@ const colors = {
     accent: '#d93921',
     background: 'white',
     light: '#f7fafc',
-    dark: '#592203',
+    dark: '#212020',
     mutedBg: '#f1f1f1',
     // UI
     text: '#181818',
