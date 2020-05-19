@@ -83,6 +83,13 @@ module.exports = {
         overlayDrafts: true
       }
     },
+    {
+      resolve: 'gatsby-plugin-snipcartv3',
+      options: {
+        apiKey: process.env.SNIPCART_API_KEY,
+        styles: false
+      }
+    },
     // {
     //   resolve: 'gatsby-plugin-google-fonts',
     //   options: {
