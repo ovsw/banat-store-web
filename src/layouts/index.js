@@ -1,7 +1,7 @@
 import React from 'react'
 import LayoutWrapper from '../components/layout'
 import {hot} from 'react-hot-loader/root'
-import Helmet from 'react-helmet'
+// import {Helmet} from 'react-helmet'
 
 import '../styles/snipcart.css'
 
