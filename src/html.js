@@ -1,6 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV || 'development'}`
+})
+
 export default function HTML (props) {
   return (
     <html {...props.htmlAttributes}>
@@ -15,14 +19,14 @@ export default function HTML (props) {
       </head>
       <body {...props.bodyAttributes}>
         {props.preBodyComponents}
-        <div id='snipcart' data-api-key='MDliYWU5YjItNTU0MC00Njk0LWIyZDgtNTc0YTIwYmNkYTU4NjM2NDUzMjExMTEyODc1Mzc5' />
+        <div id='snipcart' data-api-key={process.env.SNIPCART_API_KEY} />
         <div
           key='body'
           id='___gatsby'
           dangerouslySetInnerHTML={{__html: props.body}}
         />
         {props.postBodyComponents}
-        <script src='https://cdn.snipcart.com/themes/v3.0.11/default/snipcart.js' data-api-key='MDliYWU5YjItNTU0MC00Njk0LWIyZDgtNTc0YTIwYmNkYTU4NjM2NDUzMjExMTEyODc1Mzc5' />
+        <script src='https://cdn.snipcart.com/themes/v3.0.11/default/snipcart.js' data-api-key={process.env.SNIPCART_API_KEY} />
       </body>
     </html>
   )
