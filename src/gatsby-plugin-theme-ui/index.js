@@ -138,11 +138,11 @@ export default {
     },
     h5: {
       ...sharedHeadingStyles,
-      fontSize: 2
+      fontSize: [1, 2, 3]
     },
     h6: {
       ...sharedHeadingStyles,
-      fontSize: 1
+      fontSize: [0, 0, 0]
     },
     code: {},
     pre: {},
