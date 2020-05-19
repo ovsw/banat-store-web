@@ -6,7 +6,7 @@ import {mapEdgesToNodes, localizeText} from '../lib/helpers'
 import Img from 'gatsby-image'
 
 export default (props) => {
-  const {data, errors} = props
+  const {data} = props
   const productsEdges = data && data.homeProducts
   const productsNodes = mapEdgesToNodes(productsEdges)
 
@@ -36,7 +36,7 @@ export default (props) => {
               <Img fixed={images[0].asset.fixed} />
             </Link>
             <p>RON {price}</p>
-            <Link to={`/${slug.current}/`}>Details</Link>
+            <Link sx={{variant: 'buttons.simpleAccent'}} to={`/${slug.current}/`}>Details</Link>
           </li>
         ))}
       </ul>

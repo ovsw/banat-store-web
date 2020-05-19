@@ -3,8 +3,6 @@ import LayoutWrapper from '../components/layout'
 import {hot} from 'react-hot-loader/root'
 // import {Helmet} from 'react-helmet'
 
-import '../styles/snipcart.css'
-
 const Layout = (props) => (
   <>
     {/* <Helmet htmlAttributes={{lang: 'en'}}>

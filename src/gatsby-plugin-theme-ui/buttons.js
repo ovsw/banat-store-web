@@ -1,21 +1,18 @@
-import {skewedRight} from './common'
+// import {skewedRight} from './common'
 
 export const sharedButtonStyles = {
   cursor: 'pointer',
   color: 'white',
-  fontWeight: 'bold',
   lineHeight: 'inherit',
   textDecoration: 'none',
   display: 'inline-block',
-  py: '1.125rem',
-  px: '1.875rem',
-  border: 'none',
-  boxShadow: '0 -2px 0 0 rgba(24,24,24,.15) inset',
+  py: 3,
+  px: 4,
   fontSize: 1,
   transition: 'all 300ms ease',
   ':hover': {
-    boxShadow: '0 -3px 0 0 rgba(24,24,24,.15) inset, 0 3px 10px rgba(0,0,0,0.3)',
-    transform: 'translateY(-3px)'
+    // boxShadow: '0 -3px 0 0 rgba(24,24,24,.15) inset, 0 3px 10px rgba(0,0,0,0.3)',
+    // transform: 'translateY(-3px)'
   }
 }
 

@@ -83,16 +83,16 @@ module.exports = {
         overlayDrafts: true
       }
     },
-    {
-      resolve: 'gatsby-plugin-google-fonts',
-      options: {
-        fonts: [
-          'Merriweather:400,700',
-          'Open Sans:400,400i,700'
-        ],
-        display: 'swap'
-      }
-    },
+    // {
+    //   resolve: 'gatsby-plugin-google-fonts',
+    //   options: {
+    //     fonts: [
+    //       // 'Montserrat:400,700',
+    //       // 'Roboto:400,400i,700'
+    //     ],
+    //     display: 'swap'
+    //   }
+    // },
     'gatsby-plugin-theme-ui'
   ]
 
