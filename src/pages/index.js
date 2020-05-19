@@ -11,7 +11,16 @@ export default (props) => {
   const productsNodes = mapEdgesToNodes(productsEdges)
 
   useEffect(() => {
-    typeof window !== 'undefined' && window.fetch('/.netlify/functions/hello')
+    // typeof window !== 'undefined' && window.fetch('/.netlify/functions/hello')
+    //   .then(response => response.json())
+    //   .then(console.log)
+
+    typeof window !== 'undefined' && window.fetch('https://app.snipcart.com/api/products', {
+      headers: {
+        Accept: 'application/json',
+        Authorization: 'Basic U1RfWWpRMVlqVTBNamt0TkRnM09DMDBabU0wTFRrNFlXTXRaRGhoTkdVek1EZGlPV00yTmpNM01qTTFPRFV5TXpVek1ETXpNVEV5Og=='
+      }
+    })
       .then(response => response.json())
       .then(console.log)
   })
