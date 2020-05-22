@@ -8,7 +8,7 @@ const Header = () => {
     <header>
       <Container>
         <Link to='/' sx={{color: 'black', textDecoration: 'none', ':hover': {textDecoration: 'underline'}}}>
-          <Styled.h1>Banat Store</Styled.h1>
+          <Styled.h1>My Banat Souvenirs</Styled.h1>
         </Link>
       </Container>
     </header>

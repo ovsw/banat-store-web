@@ -138,45 +138,39 @@ async function createProductPages (graphql, actions, reporter) {
   })
 }
 
-// async function createGenericPages (graphql, actions, reporter) {
-//   const {createPage} = actions
-//   const result = await graphql(`
-//     {
-//       allSanityPage(
-//         filter: { slug: { current: { ne: null } } }
-//       ) {
-//         edges {
-//           node {
-//             id
-//             slug {
-//               current
-//             }
-//           }
-//         }
-//       }
-//     }
-//   `)
+async function createPages (graphql, actions, reporter) {
+  const {createPage} = actions
+  const result = await graphql(`
+    {
+      allSanityPage {
+        edges {
+          node {
+            _rawContent(resolveReferences: {maxDepth: 9})
+          }
+        }
+      }
+    }
+  `)
 
-//   if (result.errors) throw result.errors
+  if (result.errors) throw result.errors
 
-//   const pageEdges = (result.data.allSanityPage || {}).edges || []
+  const pageEdges = result.data.allSanityPage.edges || []
 
-//   pageEdges
-//     .forEach((edge, index) => {
-//       const {id, slug = {}} = edge.node
-//       const path = `/${slug.current}/`
+  pageEdges
+    .forEach((edge, index) => {
+      const path = `/${edge.node._rawContent.main.slug.current === 'home' ? '' : edge.node._rawContent.main.slug.current}/`
 
-//       reporter.info(`Creating generic page: ${path}`)
+      reporter.info(`Creating page: ${path}`)
 
-//       createPage({
-//         path,
-//         component: require.resolve('./src/templates/generic-page.js'),
-//         context: {id}
-//       })
-//     })
-// }
+      createPage({
+        path,
+        component: require.resolve('./src/templates/page.js'),
+        context: {...edge.node._rawContent}
+      })
+    })
+}
 
 exports.createPages = async ({graphql, actions, reporter}) => {
-  // await createGenericPages(graphql, actions, reporter)
   await createProductPages(graphql, actions, reporter)
+  await createPages(graphql, actions, reporter)
 }

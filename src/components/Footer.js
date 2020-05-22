@@ -23,7 +23,7 @@ const Footer = () => {
       <Container sx={{variant: ['utils.textCenter']}}>
         <div sx={footerContentStyles}>
           <div className='column' sx={{textAlign: 'left'}}>
-            <h6>Banat Store</h6>
+            <h6>My Banat Souvenirs</h6>
             <p>Timisoara Tour Guide S.R.L.</p>
             <ul sx={{variant: 'lists.reset', li: {mb: 4, a: {variant: 'utils.noUnderline'}, svg: {mr: 2}}}}>
               <li>
@@ -41,8 +41,10 @@ const Footer = () => {
           </div>
           <div className='column'>
             <h6>Info</h6>
-            <ul>
-              <li><Link>Contact</Link></li>
+            <ul sx={{textAlign: 'left', mx: 'auto', width: '200px', li: {py: 3}}}>
+              <li><Link to='/terms-and-conditions/'>Terms &amp; Conditions</Link></li>
+              <li><Link to='/privacy-policy/'>Privacy Policy</Link></li>
+              <li><Link to='/contact/'>Contact</Link></li>
             </ul>
           </div>
           <div className='column'>
