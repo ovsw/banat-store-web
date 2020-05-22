@@ -1,8 +1,9 @@
 /** @jsx jsx */
-import {jsx} from 'theme-ui'
+import {jsx, Container} from 'theme-ui'
 import React, {useEffect} from 'react' // eslint-disable-line
 import {graphql} from 'gatsby'
 import {mapEdgesToNodes, localizeText} from '../lib/helpers'
+import SEO from '../components/seo'
 
 // modules
 import FeaturedProducts from '../modules/featured-products'
@@ -28,7 +29,11 @@ export default (props) => {
   })
 
   return (
-    <FeaturedProducts productsNodes={productsNodes} />
+    <>
+      <SEO seoTitle='My Banat Souvenirs' />
+
+      <FeaturedProducts productsNodes={productsNodes} />
+    </>
   )
 }
 

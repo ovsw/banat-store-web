@@ -8,7 +8,7 @@ const SocialLinks = () => {
     <>
       <li><a href='https://www.facebook.com' target='_blank' rel='noopener noreferrer'><FaFacebook /></a></li>
       <li><a href='https://www.instagram.com' target='_blank' rel='noopener noreferrer'><FaInstagram /></a></li>
-      <li><a href='https://www.twitter.com' target='_blank' rel='noopener noreferrer'><FaTwitter /></a></li>
+      {/* <li><a href='https://www.twitter.com' target='_blank' rel='noopener noreferrer'><FaTwitter /></a></li> */}
     </>
   )
 }
