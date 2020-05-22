@@ -9,7 +9,7 @@ require('dotenv').config({
   path: `.env.${process.env.NODE_ENV || 'development'}`
 })
 
-const path = require('path')
+// const path = require('path')
 const clientConfig = require('./client-config')
 
 const {createProxyMiddleware} = require('http-proxy-middleware')
@@ -81,13 +81,6 @@ module.exports = {
         token: process.env.SANITY_READ_TOKEN,
         watchMode: true,
         overlayDrafts: true
-      }
-    },
-    {
-      resolve: 'gatsby-plugin-snipcartv3',
-      options: {
-        apiKey: process.env.SNIPCART_API_KEY,
-        styles: false
       }
     },
     // {
